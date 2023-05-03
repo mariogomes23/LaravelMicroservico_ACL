@@ -12,6 +12,8 @@ use App\Http\Controllers\Api\Auth\LoginController;
 Route::middleware("auth:sanctum")->group(function(){
 
     Route::apiResource("user",UserController::class);
+    Route::post("/logout",[LoginController::class,"Logout"]);
+    Route::post("/perfil",[LoginController::class,"Perfil"]);
 
 
 });
