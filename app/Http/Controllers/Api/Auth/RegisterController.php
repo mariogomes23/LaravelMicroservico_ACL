@@ -33,7 +33,6 @@ class RegisterController extends Controller
 
             "name" =>$request->name,
             "email" =>$request->email,
-            "device_name"=>$request->device_name,
 
             "password" =>Hash::make($request->password)
         ]);
@@ -41,7 +40,7 @@ class RegisterController extends Controller
 
 
            return (new UserResource($users))->additional([
-            'token' => $users->createToken($request->device_name)->plainTextToken
+            'token' => $users->createToken("register")->plainTextToken
            ]);
 
     }
