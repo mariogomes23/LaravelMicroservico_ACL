@@ -7,12 +7,16 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::middleware("auth:sanctum")->prefix()->group(function(){
+
+    Route::apiResource("user",UserController::class);
+
+
+});
 
 Route::post("/register",[RegisterController::class,"store"]);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::apiResource("user",UserController::class);
 
 
