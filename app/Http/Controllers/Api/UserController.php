@@ -32,7 +32,7 @@ class UserController extends Controller
     public function store(UserCreateRequest $request)
     {
 
-        $request->validated();
+
 
         $users = $this->user->create([
             "name"=>$request->name,

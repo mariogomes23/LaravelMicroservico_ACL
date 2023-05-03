@@ -35,10 +35,10 @@ class LoginController extends Controller
             ]);
         }
 
-        return (new UserResource($user))
-                    ->additional([
-                        'token' => $user->createToken("login")->plainTextToken,
-                    ]);
+
+        return (new UserResource($user))->additional([
+            'token' => $user->createToken("token")->plainTextToken
+           ]);
 
     }
 

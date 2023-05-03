@@ -40,7 +40,7 @@ class RegisterController extends Controller
 
 
            return (new UserResource($users))->additional([
-            'token' => $users->createToken("register")->plainTextToken
+            'token' => $users->createToken("token")->plainTextToken
            ]);
 
     }
