@@ -21,8 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
-        "device_name"
+        'password'
     ];
 
     /**
@@ -43,4 +42,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function permissions()
+    {
+
+        return $this->belongsToMany(Permissoe::class);
+
+    }
+
+    public function hasPermission($name)
+    {
+    $this->permissions()->where("name",$name)->firstOrFail() ? (true):(false);
+
+
+    }
 }

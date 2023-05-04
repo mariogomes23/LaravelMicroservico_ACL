@@ -18,7 +18,8 @@ class UserResource extends JsonResource
 
             "id"=>$this->uuid,
             "name" =>$this->name,
-            "email"=>$this->email
+            "email"=>$this->email,
+            "permissions" =>PermissionResource::collection($this->permissions)
 
 
         ];

@@ -17,4 +17,11 @@ class Permissoe extends Model
         return $this->hasMany(Recurso::class);
     }
 
+    public function users()
+    {
+
+        return $this->belongsToMany(User::class);
+
+    }
+
 }

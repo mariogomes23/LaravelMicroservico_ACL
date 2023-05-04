@@ -16,4 +16,6 @@ class Recurso extends Model
         return $this->hasMany(Permissoe::class);
     }
 
+
+    
 }
